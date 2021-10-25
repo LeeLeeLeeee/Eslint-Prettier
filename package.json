@@ -1,0 +1,20 @@
+{
+  "name": "eslint-prettier-example",
+  "version": "1.0.0",
+  "main": "index.js",
+  "repository": "git@github.com:LeeLeeLeeee/Eslint-Prettier.git",
+  "author": "leeleeleeee <ijj1792@naver.com>",
+  "license": "MIT",
+  "devDependencies": {
+    "eslint": "^7.32.0",
+    "eslint-config-airbnb-base": "^14.2.1",
+    "eslint-config-prettier": "^8.3.0",
+    "eslint-plugin-import": "^2.25.2",
+    "eslint-plugin-prettier": "^4.0.0",
+    "prettier": "^2.4.1"
+  },
+  "scripts": {
+    "lint": "npx eslint './src/**/*.{js, ts}'",
+    "lint:fix": "npx eslint './src/**/*.{js, ts}' --fix"
+  }
+}
