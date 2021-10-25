@@ -52,9 +52,9 @@ const aB = 3; // 변경 후
 
 #### ESLint Configure 옵션
 
-- `Environments`: global variables 설정하는 옵션
+-   `Environments`: global variables 설정하는 옵션
 
-```json
+```javascript
     /* true, false 설정. default = false */
     "env": {
         "browser": true,
@@ -80,23 +80,23 @@ const aB = 3; // 변경 후
     /* ... */
 ```
 
-- `parserOptions`: ESLint 사용을 위해 지원하려는 Js 언어 옵션 지정
+-   `parserOptions`: ESLint 사용을 위해 지원하려는 Js 언어 옵션 지정
 
-  - ecmaVersion: 사용할 ECMAScript 버전을 설정
-  - sourceType: parser의 export 형태를 설정
-  - ecmaFeatures: ECMAScript의 언어 확장 기능을 설정
-  - [ECMA란?](https://sumini.dev/til/006-ecmascript/)
+    -   ecmaVersion: 사용할 ECMAScript 버전을 설정
+    -   sourceType: parser의 export 형태를 설정
+    -   ecmaFeatures: ECMAScript의 언어 확장 기능을 설정
+    -   [ECMA란?](https://sumini.dev/til/006-ecmascript/)
 
-- `parser`: ESLint 구문 분석을 위해 사용되는 `parser`설정 `default = 'Espree'`
+-   `parser`: ESLint 구문 분석을 위해 사용되는 `parser`설정 `default = 'Espree'`
 
-  - babel용 파서 `babel-eslint`, typescript용 파서 `@typescript-eslint/parser`
+    -   babel용 파서 `babel-eslint`, typescript용 파서 `@typescript-eslint/parser`
 
-- `plugin`: ESLint는 서드파티 플러그인 사용을 지원한다. 해당 플러그인을 설정할 수 있는 옵션이다.
+-   `plugin`: ESLint는 서드파티 플러그인 사용을 지원한다. 해당 플러그인을 설정할 수 있는 옵션이다.
 
-- `extends`: ESLint 서드파티로 추가한 플러그인에서 사용할 규칙을 설정해주는 옵션
-  - 뒤에 오는 설정이 앞의 설정을 덮어쓰기때문에 순서를 잘 넣어줘야한다.
+-   `extends`: ESLint 서드파티로 추가한 플러그인에서 사용할 규칙을 설정해주는 옵션
+    -   뒤에 오는 설정이 앞의 설정을 덮어쓰기때문에 순서를 잘 넣어줘야한다.
 
-```json
+```javascript
     /*  */
     "plugins": ["@typescript-eslint", "import"],
     "extends": [
@@ -108,15 +108,15 @@ const aB = 3; // 변경 후
     ],
 ```
 
-- `rules`: ESLint가 프로젝트에 사용할 규칙을 설정할 수 있는 곳
-  - `off` or `0`: 규칙을 사용하지 않음
-  - `warn` or `1`: 규칙을 경고로 사용
-  - `error` or `2`: 규칙을 오류로 사용
-  - 규칙에 추가 옵션이 있는 경우 배열 리터럴 구문을 사용하여 지정 가능
+-   `rules`: ESLint가 프로젝트에 사용할 규칙을 설정할 수 있는 곳
+    -   `off` or `0`: 규칙을 사용하지 않음
+    -   `warn` or `1`: 규칙을 경고로 사용
+    -   `error` or `2`: 규칙을 오류로 사용
+    -   규칙에 추가 옵션이 있는 경우 배열 리터럴 구문을 사용하여 지정 가능
 
 [Rules]
 
-```json
+```javascript
 {
 	"rules": {
 		"eqeqeq": "off",
@@ -127,7 +127,7 @@ const aB = 3; // 변경 후
 }
 ```
 
-- 인라인으로 룰 적용 방지
+-   인라인으로 룰 적용 방지
 
 ```javascript
 // 경고 비활성화 블록 주석
@@ -136,9 +136,9 @@ alert('foo');
 /* eslint-enable */
 ```
 
-- 특정 파일 그룹에 대해서만 규칙 비활성화
+-   특정 파일 그룹에 대해서만 규칙 비활성화
 
-```json
+```javascript
  "overrides": [
     {
       "files": ["*-test.js","*.spec.js"],
@@ -148,10 +148,10 @@ alert('foo');
     }
 ```
 
-- 파일 디렉토리 제외
-  - `ignorePatterns` 혹은 `eslintignore` 파일 작성하여 제외 가능
+-   파일 디렉토리 제외
+    -   `ignorePatterns` 혹은 `eslintignore` 파일 작성하여 제외 가능
 
-```json
+```javascript
 // .eslintrc 파일 ignorePatterns 설정
 {
 	"ignorePatterns": ["temp.js", "node_modules/"],
